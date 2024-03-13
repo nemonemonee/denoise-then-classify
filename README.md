@@ -1,6 +1,7 @@
 # Is Data Augmentation Really Necessary?
-## Denoise-Then-Classify Approach on CIFAR10
-## CS 497 Final Project
+Denoise-Then-Classify Approach on CIFAR10
+
+CS 497 Final Project
 
 ### 1. Introduction
 
