@@ -1,2 +1,2 @@
-# denoise-then-classify
-cs 497 final project
+# Is Data Augmentation Really Necessary?
+## CS 497 Final Project
