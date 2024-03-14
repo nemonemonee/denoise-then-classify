@@ -3,7 +3,7 @@ Denoise-Then-Classify Approach on CIFAR10
 
 CS 497 Final Project
 
-In the repository, the "models.py" file contains the source code for all the utilized models. The "main.ipynb" notebook provides an easy way to reproduce all experiments. Additionally, a PDF document is produced from the TeX code.
+In the repository, the "models.py" file contains the source code for all the utilized models. The "main.ipynb" notebook provides an easy way to reproduce all experiments. 
 
 ### 1. Introduction
 
@@ -20,6 +20,8 @@ Model IV maintains the architectural design of Model II but diverges in its trai
 The perturbation level (t), representing noise variance, is strategically varied to incorporate curriculum learning principles, aiming to enhance model robustness without overfitting to a specific t value. For the denoiser model, t is reduced from 0.3 to 0.05, sharpening its precision with decreasing noise levels. In contrast, for the Data Augmentation and Joint Training approaches, t increases from 0 to 0.3, exposing models to a wider range of noise. This gradual adjustment of t enhances models' robustness to handle various perturbation levels.
 #### 2.6 Adversarial Part
 During the final project proposal presentation, a compelling observation was made: adding a new model to the forefront and claiming it enhances robustness against adversarial attacks, when these attacks primarily target the latter part of the model, misses the point. In response to this insightful feedback, my strategy is adopted to produce adversarial examples across all four models to conduct a comprehensive comparison. The hypothesis I aim to test is that adversarial examples generated against both the denoise-then-classify and the jointly-trained models will result in significantly more detectable noise.
+##### update
+The adversarial generation method I implemented needs to take the perturbation level as an input. Therefore, I adapted the method here to use the same adversarial attack algorithm with the same perturbation level and compare the success rate at which each output label remains unflipped.
 ### 3. Results (To be Continued)
 #### 3.1 Accuracy On Clean And Noisy Images
 ![Figure 1](images/fig1.png)
@@ -32,9 +34,15 @@ The Denoise-Then-Classify Approach shows an improved robustness to noise with a 
 The Data Augmentation Approach shows a better performance in both clean and noisy images in comparison with the Denoise-then-classify approach.
 
 The joint training approach shows nearly identical performance on the clean and noisy dataset, indicating the best robustness.
+#### 3.2 Robustness to Different Nosie Level
+![Figure 1](images/fig2.png)
+
+### 3.3 
 ### 4. Analysis
 #### 4.1 
 
+#### 4.2 
+![Figure 1](images/fig3.png)
 
 ### 5. Conclusion and Future Work
 
