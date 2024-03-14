@@ -35,14 +35,18 @@ The Data Augmentation Approach shows a better performance in both clean and nois
 
 The joint training approach shows nearly identical performance on the clean and noisy dataset, indicating the best robustness.
 #### 3.2 Robustness to Different Nosie Level
-![Figure 1](images/fig2.png)
+![Figure 2](images/fig2.PNG)
 
+### 3.3 Adversarial Part
+![Figure 3](images/fig3.PNG)
+
+![Figure 4](images/fig4.PNG)
 ### 3.3 
 ### 4. Analysis
 #### 4.1 
 
 #### 4.2 
-![Figure 1](images/fig3.png)
+
 
 ### 5. Conclusion and Future Work
 
