@@ -3,7 +3,7 @@ Denoise-Then-Classify Approach on CIFAR10
 
 CS 497 Final Project
 
-In the repository, the "models.py" file contains the source code for all the utilized models. The "main.ipynb" notebook provides an easy way to reproduce all experiments. [link to repo](https://example.com)
+In the repository, the "models.py" file contains the source code for all the utilized models. The "main.ipynb" notebook provides an easy way to reproduce all experiments. [Link to Github Repository]([https://example.com](https://github.com/nemonemonee/denoise-then-classify/tree/main))
 
 ### 1. Introduction
 
