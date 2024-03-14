@@ -36,12 +36,15 @@ The Data Augmentation Approach shows a better performance in both clean and nois
 The joint training approach shows nearly identical performance on the clean and noisy dataset, indicating the best robustness.
 #### 3.2 Robustness to Different Nosie Level
 ![Figure 2](images/fig2.PNG)
+As shown in this figure, all three mehtods other than baseline classifier show a consistent performance over different perturbation levels.
 
 ### 3.3 Adversarial Part
 ![Figure 3](images/fig3.PNG)
-
+This is the first 8 images in the test set.
+The true labels are 
 ![Figure 4](images/fig4.PNG)
-### 3.3 
+This is the adversarial examples generated on the baseline classifier. The perturbation level used here is 0.05 and the noise is not detectable. The other adversarial examples generated on other models basically look the same, so I will only include the label flips here.
+
 ### 4. Analysis
 #### 4.1 
 
