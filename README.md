@@ -25,6 +25,7 @@ The adversarial generation method I implemented needs to take the perturbation l
 ### 3. Results (To be Continued)
 #### 3.1 Accuracy On Clean And Noisy Images
 ![Figure 1](images/fig1.png)
+
 The bar chart presents the accuracy of four different models on the CIFAR10 dataset, comparing performance on both clean and noisy data. The noisy images are constructed using perturbation level t = 0.3.
 
 The Baseline Classifier shows a significant drop in performance with noisy images. It has the highest accuracy on clean data at 63%, but this decreases to 29% with noise, indicating a bad robustness to noise perturbations.
@@ -36,13 +37,16 @@ The Data Augmentation Approach shows a better performance in both clean and nois
 The joint training approach shows nearly identical performance on the clean and noisy dataset, indicating the best robustness.
 #### 3.2 Robustness to Different Nosie Level
 ![Figure 2](images/fig2.PNG)
+
 As shown in this figure, all three mehtods other than baseline classifier show a consistent performance over different perturbation levels.
 
 ### 3.3 Adversarial Part
 ![Figure 3](images/fig3.PNG)
+
 This is the first 8 images in the test set.
 The true labels are 
 ![Figure 4](images/fig4.PNG)
+
 This is the adversarial examples generated on the baseline classifier. The perturbation level used here is 0.05 and the noise is not detectable. The other adversarial examples generated on other models basically look the same, so I will only include the label flips here.
 
 ### 4. Analysis
