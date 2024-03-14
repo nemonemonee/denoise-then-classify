@@ -17,9 +17,10 @@ The Dataset Augmentation Approach is embodied in Model III, which utilizes a cla
 #### 2.4. Model IV: Joint Training Approach
 Model IV maintains the architectural design of Model II but diverges in its training methodology by jointly training the denoiser and classifier components, rather than in a sequential manner. This integrated approach serves as an upper bound in comparisons.
 #### 2.5 Perturbation Level Adjustment in Training
-The perturbation level (t), representing noise variance, is strategically varied to incorporate curriculum learning principles, aiming to enhance model robustness without overfitting to a specific t value. For the denoiser model, t is reduced from 0.3 to 0.05, sharpening its precision with decreasing noise levels. In contrast, for the Data Augmentation and Joint Training approaches, t increases from 0 to 0.3, exposing models to a wider range of noise. This gradual adjustment of t enhances models' ability to handle various perturbation levels
+The perturbation level (t), representing noise variance, is strategically varied to incorporate curriculum learning principles, aiming to enhance model robustness without overfitting to a specific t value. For the denoiser model, t is reduced from 0.3 to 0.05, sharpening its precision with decreasing noise levels. In contrast, for the Data Augmentation and Joint Training approaches, t increases from 0 to 0.3, exposing models to a wider range of noise. This gradual adjustment of t enhances models' robustness to handle various perturbation levels.
 
-### 3. Results ()
+### 3. Results (To be Continued)
+![Figure 1](images/fig1.png)
 
 ### 4. Analysis
 
