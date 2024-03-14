@@ -44,10 +44,35 @@ As shown in this figure, all three mehtods other than baseline classifier show a
 ![Figure 3](images/fig3.PNG)
 
 This is the first 8 images in the test set.
-The true labels are 
+The true labels are cat, ship, ship, plane, frog, frog, car, frog.
+
 ![Figure 4](images/fig4.PNG)
 
 This is the adversarial examples generated on the baseline classifier. The perturbation level used here is 0.05 and the noise is not detectable. The other adversarial examples generated on other models basically look the same, so I will only include the label flips here.
+
+For the baseline classifier:
+
+Orig Pred labels: dog truck truck ship frog frog car frog 
+
+Predicted labels: bird car car ship deer truck dog plane
+
+For the Denoise-Then-Classify Approach:
+
+Orig Pred labels: cat truck ship ship deer cat dog frog 
+
+Predicted labels: frog car truck ship cat cat dog plane
+
+For the Data Augmentation Approach:
+
+Orig Pred labels: cat ship ship plane deer frog dog frog 
+
+Predicted labels: frog car car ship deer frog dog deer
+
+For the Jointly Training Approach:
+
+Orig Pred labels: cat ship ship plane frog bird car frog 
+
+Predicted labels: dog ship truck ship bird deer cat deer
 
 ### 4. Analysis
 #### 4.1 
@@ -56,4 +81,4 @@ This is the adversarial examples generated on the baseline classifier. The pertu
 
 
 ### 5. Conclusion and Future Work
-
+The resolution of CIFAR10 is very low: it is even hard to distinguish some of the images myself, so it would be interesting to replicate this experiment on ImageNet, which has much higher resolutions.
