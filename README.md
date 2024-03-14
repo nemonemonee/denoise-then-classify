@@ -23,7 +23,7 @@ During the final project proposal presentation, a compelling observation was mad
 ### 3. Results (To be Continued)
 #### 3.1 Accuracy On Clean And Noisy Images
 ![Figure 1](images/fig1.png)
-The bar chart presents the accuracy of four different models on the CIFAR10 dataset, comparing performance on both clean and noisy data.
+The bar chart presents the accuracy of four different models on the CIFAR10 dataset, comparing performance on both clean and noisy data. The noisy images are constructed using perturbation level t = 0.3.
 
 The Baseline Classifier shows a significant drop in performance with noisy images. It has the highest accuracy on clean data at 63%, but this decreases to 29% with noise, indicating a bad robustness to noise perturbations.
 
