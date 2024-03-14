@@ -6,7 +6,7 @@ CS 497 Final Project
 In the repository, the "models.py" file contains the source code for all the utilized models. The "main.ipynb" notebook provides an easy way to reproduce all experiments. [Link to Github Repository](https://github.com/nemonemonee/denoise-then-classify/tree/main)
 
 ### 1. Introduction
-
+Adversarial attacks in machine learning are crafted by introducing a subtle amount of noise, imperceptible to the human eye, but powerful enough to deceive models into making incorrect classifications.  In this project, I want to examin the hypothesize that if the models that are robust to noise can exhibit enhanced resilience in adversarial scenarios, since the source of domain shift made by adversarial examples is just noise.
 ### 2. Procedures
 #### 2.1. Model I: Baseline
 This model is designated as the Baseline Classifier. It is trained exclusively with clean images and features an architecture consisting of a Convolutional Neural Network (CNN) followed by a Transformer encoder and a linear output head.
@@ -48,7 +48,7 @@ The true labels are cat, ship, ship, plane, frog, frog, car, frog.
 
 ![Figure 4](images/fig4.PNG)
 
-This is the adversarial examples generated on the baseline classifier. The perturbation level used here is 0.05 and the noise is not detectable. The other adversarial examples generated on other models basically look the same, so I will only include the label flips here.
+This is the adversarial examples generated on the baseline classifier. The perturbation level used here is 0.05 and the noise is not detectable. The other adversarial examples generated on other models basically look the same, so I will only include the pair of original predicted labels and the predicted labels after adversarial attack.
 
 For the baseline classifier:
 
@@ -75,10 +75,15 @@ Orig Pred labels: cat ship ship plane frog bird car frog
 Predicted labels: dog ship truck ship bird deer cat deer
 
 ### 4. Analysis
-#### 4.1 
+#### 4.1. Robustness to Domain Shft
+The jointly training approach serves as the upper bound as expected. Similarly, the performance of the data augmentation method meets expectations: it demonstrates robustness to noise, with results slightly below the upper bound. However, the proposed method falls short of expectations. Its performance, while stable across varying levels of noise, is suboptimal. There are several potential reasons for this failure: firstly, training models separately may not be effective; secondly, predicting noise in low-resolution images could inherently be challenging. It is worth noting that the better performance of the joint training approach might be attributed to the more complex architecture of the model. 
 
-#### 4.2 
+#### 4.2. Adversarial Part
+In short, all models perform badly when using the gradient of each model itself to generate adversarial examples.
 
+### 5. Future Work
+Given the low resolution of the CIFAR-10 dataset, where distinguishing some images can be challenging even to the human eye, replicating the experiment on a dataset like ImageNet, which has much higher resolution images, would indeed be interesting. This shift might significantly affect the models' performance due to the richer detail and information available in higher-resolution images.
 
-### 5. Conclusion and Future Work
-The resolution of CIFAR10 is very low: it is even hard to distinguish some of the images myself, so it would be interesting to replicate this experiment on ImageNet, which has much higher resolutions.
+Furthermore, there might be a misalignment between the noisy image classification task and the adversarial scenarios being simulated. Typically, adversarial attacks involve minor perturbations, yet the models have been trained across a broader spectrum of noise levels. Refocusing the training of the denoiser on smaller perturbations may yield results that are more representative of actual adversarial conditions and could improve the model's effectiveness in countering such attacks.
+
+The mixed results from the experiment also raise questions about the successes reported in the paper "Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser" by Liao et al., 2018. Replicating their work could provide valuable insights into the discrepancy in outcomes and potentially highlight subtle nuances that could account for their reported success.
